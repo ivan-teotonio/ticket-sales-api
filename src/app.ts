@@ -1,4 +1,10 @@
 import express from "express";
+import * as mysql from "mysql2/promise";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -41,6 +47,6 @@ app.get("/events/:eventId", (req, res) => {
   res.send();
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
