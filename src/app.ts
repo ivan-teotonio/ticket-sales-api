@@ -43,7 +43,7 @@ app.use(async (req, res, next) => {
       res.status(401).json({ message: "User not found" });
       return;
     }
-    req.user = user;
+    req.user = user as { id: number; email: string };
     next();
   } catch (error) {
     res.status(401).json({ message: "Failed to authenticate token" });

@@ -20,7 +20,7 @@ Content-Type: application/json
 ### criação de evento pelo parceiro
 POST http://localhost:3000/partners/events
 Content-Type: application/json
-
+Authorization: Bearer {{token}}
 {
     "name": "Evento teste 1",
     "description": "Descrição do evento",
