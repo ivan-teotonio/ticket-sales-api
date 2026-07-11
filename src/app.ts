@@ -13,6 +13,14 @@ app.post("/auth/login", (req, res) => {
   res.send();
 });
 
+app.post("/partners", (req, res) => {
+  const { name, email, password, company_name } = req.body;
+});
+
+app.post("/customers", (req, res) => {
+  const { name, email, password, address, telefone } = req.body;
+});
+
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
