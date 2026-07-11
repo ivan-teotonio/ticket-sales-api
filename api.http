@@ -17,20 +17,21 @@ Content-Type: application/json
     "company_name": "Company Name 1"
 }
 
+### criação de evento pelo parceiro
 POST http://localhost:3000/partners/events
 Content-Type: application/json
 
 {
-    "name": "Partner 1",
-    "email": "partner1@user.com",
-    "password": "secret",
-    "company_name": "Company Name 1"
+    "name": "Evento teste 1",
+    "description": "Descrição do evento",
+    "date": "2023-10-10T10:00:00",
+    "location": "Rua x, bairro etc"
 }
 
-###
+### listagem de eventos do parceiro
 GET http://localhost:3000/partners/events
 
-###
+### listagem de um eventos do parceiro
 GET http://localhost:3000/partners/events/1
 
 ###
@@ -44,10 +45,10 @@ Content-Type: application/json
     "location": "Rua x, bairro etc"
 }
 
-###
+### listagem de eventos
 GET http://localhost:3000/events
 
-###
+### listagem de um evento
 GET http://localhost:3000/events/1
 
 ###
@@ -55,8 +56,8 @@ POST http://localhost:3000/customers
 Content-Type: application/json
 
 {
-    "name": "Partner 1",
-    "email": "partner1@user.com",
+    "name": "Customer 1",
+    "email": "customer1@user.com",
     "password": "secret",
     "address": "adress test",
     "phone": "33333333333"
