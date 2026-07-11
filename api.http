@@ -17,6 +17,22 @@ Content-Type: application/json
     "company_name": "Company Name 1"
 }
 
+POST http://localhost:3000/partners/events
+Content-Type: application/json
+
+{
+    "name": "Partner 1",
+    "email": "partner1@user.com",
+    "password": "secret",
+    "company_name": "Company Name 1"
+}
+
+###
+GET http://localhost:3000/partners/events
+
+###
+GET http://localhost:3000/partners/events/1
+
 ###
 POST http://localhost:3000/events
 Content-Type: application/json
