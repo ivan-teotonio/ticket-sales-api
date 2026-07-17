@@ -55,7 +55,7 @@ POST http://localhost:3000/partners/register
 Content-Type: application/json 
 
 {
-    "name": "2",
+    "name": "partner 2",
     "email": "partiner2@user.com",
     "password": "secret",
     "company_name": "Company Name 2"
@@ -116,6 +116,12 @@ Authorization: Bearer {{loginPartner1.response.body.token}}
     "price": 100.00
 }
 
+### Poderia trabalhar com paginação 
+GET http://localhost:3000/events/1/tickets
+
+###
+GET http://localhost:3000/events/1/tickets/1
+
 ### listagem de eventos
 GET http://localhost:3000/events
 
@@ -124,3 +130,12 @@ GET http://localhost:3000/events
 ### listar um evento específico
 GET http://localhost:3000/events/1
  
+### 
+POST http://localhost:3000/purchases
+Content-Type: application/json
+Authorization: Bearer {{loginCustomer1.response.body.token}}
+
+{
+   "ticket_ids": [1], 
+   "card_token": "tok_visa"
+}
