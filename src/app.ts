@@ -6,10 +6,10 @@ import { partnerRoutes } from "./controller/partner-controller";
 import { customerRoutes } from "./controller/customer-controller";
 import { eventRoutes } from "./controller/event-controller";
 import { Database } from "./database";
-import { middleware } from "./middleware";
 import { UserService } from "./services/user-service";
 import jwt from "jsonwebtoken";
 import { ticketRoutes } from "./controller/ticket-controller";
+import { purchaseRoutes } from "./controller/purchase-controller";
 
 const app = express();
 
@@ -68,11 +68,15 @@ app.use("/partners", partnerRoutes);
 app.use("/customers", customerRoutes);
 app.use("/events", eventRoutes);
 app.use("/events", ticketRoutes);
+app.use("/purchases", purchaseRoutes);
 //app.use('/purchases', purchaseRoutes);
 
 app.listen(port, async () => {
   const connection = Database.getInstance();
   await connection.execute("SET FOREIGN_KEY_CHECKS = 0");
+  await connection.execute("TRUNCATE TABLE reservation_tickets");
+  await connection.execute("TRUNCATE TABLE purchase_tickets");
+  await connection.execute("TRUNCATE TABLE purchases");
   await connection.execute("TRUNCATE TABLE tickets");
   await connection.execute("TRUNCATE TABLE events");
   await connection.execute("TRUNCATE TABLE customers");
