@@ -3,7 +3,7 @@
 
 ###
 # @name loginPartner1
-POST http://localhost:3000/auth/login
+POST http://52.90.49.180:3000/auth/login
 Content-Type: application/json 
 
 {
@@ -40,7 +40,7 @@ Content-Type: application/json
 
 
 ### Criação do partner 1
-POST http://localhost:3000/partners/register
+POST http://52.90.49.180:3000/partners/register
 Content-Type: application/json 
 
 {
@@ -74,7 +74,7 @@ Content-Type: application/json
 }
 
 ### Criação do evento do parceiro
-POST http://localhost:3000/partners/events
+POST http://52.90.49.180:3000/partners/events
 Content-Type: application/json
 Authorization: Bearer {{ loginPartner1.response.body.token }}
 
